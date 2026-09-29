@@ -1,8 +1,8 @@
 const fs = require('fs/promises');
 const path = require('path');
 const pool = require('../config/db');
-const AppError = require('../utils/appError');
-const { UPLOAD_DIR  } = require('../,iddlewares/upload.middleware');
+const AppError = require('../utils/AppError');
+const { UPLOAD_DIR  } = require('../middlewares/upload.middleware');
 
 async function borrarImagenSiExiste(imagen) {
     if (!imagen) return;
@@ -13,6 +13,12 @@ async function borrarImagenSiExiste(imagen) {
         // Si el archivo ya no existe en disco no es un error para el usuario.
     }
 }
+
+async function listEquipo() {
+    const [rows] = await pool.execute('SELECT * FROM equipos ORDER BY id_equipo DESC');
+    return rows;
+}
+
 
 
 async function getEquipoById(id) {
@@ -74,7 +80,7 @@ async function deleteEquipo(id) {
     await borrarImagenSiExiste(actual.imagen);
 }
 
-module.exports = { listEquipos, getEquipoById, createEquipo, updateEquipo, deleteEquipo };
+module.exports = { listEquipo, getEquipoById, createEquipo, updateEquipo, deleteEquipo };
     
 
 

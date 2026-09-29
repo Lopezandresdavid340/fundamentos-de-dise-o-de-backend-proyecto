@@ -1,4 +1,4 @@
-require('dotenv'),config();
+require('dotenv').config();
 
 const required = ['DB_HOST','DB_USER','DB_NAME','JWT_SECRET'];
 

@@ -1,4 +1,4 @@
-const equipoService = require('../services/equipos.service');
+const equiposService = require('../services/equipos.service');
 
 async function list(req, res, next) {
     try {
@@ -27,4 +27,4 @@ async function create(req, res, next) {
     }
 }
 
-module.exports ={ list, getBYId, create, update, remove };
+module.exports ={ list, getById, create, update, remove };

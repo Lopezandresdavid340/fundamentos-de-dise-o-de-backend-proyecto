@@ -1,5 +1,5 @@
 const app = require('./src/app');
-const env = require('src/config/env');
+const env = require('.src/config/env');
 const seeAdmin = require('src/startup/seedAdmin');
 
 async function start() {

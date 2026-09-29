@@ -3,9 +3,9 @@ const pool = require('../config/db');
 const { createToken } = require('../utils/jwt');
 const AppError = require('../utils/appError');
 
-async function registerUser({ username, email, password }) {
+async function registerUser({ nombre, email, password }) {
     if (!nombre || !email || !password) {
-        throw new AppError('nombre, email y password son obligatorios', 400);')
+        throw new AppError('nombre, email y password son obligatorios', 400);
     } 
 
     const [existing] = await pool.execute(

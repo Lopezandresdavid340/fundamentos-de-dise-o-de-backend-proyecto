@@ -1,7 +1,7 @@
-const express =require('express');
+const express = require('express');
 const controller = require ('../controllers/equipos.controller');
-const { authenticate, authorize } =require('../middlewares/auth.middleware');
-const { uploadEquipoImgen } =require('../middlewares/upload.middleware');
+const { authenticate, authorize } = require('../middlewares/auth.middleware');
+const { uploadEquipoImgen } = require('../middlewares/upload.middleware');
 
 const router = express.Router();
 
